@@ -1,0 +1,29 @@
+drop table personne;
+create table personne (pk serial primary key not null, nom varchar(30), prenom varchar(30), email varchar(50));
+
+insert into personne (nom, prenom, email) values ('Nom', 'Prénom', 'e-mail@server.xx');
+insert into personne (nom, prenom, email) values ('Lastname', 'Firstname', 'my-email.server.xx');
+select * from personne;
+ pk |   nom    |  prenom   |       email        
+----+----------+-----------+--------------------
+  1 | Nom      | Prénom    | e-mail@server.xx
+  2 | Lastname | Firstname | my-email.server.xx
+(2 rows)
+
+delete from personne;
+insert into personne (nom, prenom, email) values ('Nom', 'Prénom', 'e-mail@server.xx');
+insert into personne (nom, prenom, email) values ('Lastname', 'Firstname', 'my-email.server.xx');
+select * from personne;
+ pk |   nom    |  prenom   |       email        
+----+----------+-----------+--------------------
+  3 | Nom      | Prénom    | e-mail@server.xx
+  4 | Lastname | Firstname | my-email.server.xx
+(2 rows)
+
+update personne set email = 'my-email@server.xx' where pk = 4;
+select * from personne;
+ pk |   nom    |  prenom   |       email        
+----+----------+-----------+--------------------
+  3 | Nom      | Prénom    | e-mail@server.xx
+  4 | Lastname | Firstname | my-email@server.xx
+(2 rows)
