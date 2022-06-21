@@ -27,3 +27,13 @@ select * from personne;
   3 | Nom      | Prénom    | e-mail@server.xx
   4 | Lastname | Firstname | my-email@server.xx
 (2 rows)
+
+alter table personne add column fonction varchar(40);
+update personne set fonction = 'Fonction' where nom = 'Nom';
+update personne set fonction = 'Function' where prenom = 'Firstname';
+select * from personne;
+ pk |   nom    |  prenom   |       email        | fonction 
+----+----------+-----------+--------------------+----------
+  3 | Nom      | Prénom    | e-mail@server.xx   | Fonction
+  4 | Lastname | Firstname | my-email@server.xx | Function
+(2 rows)

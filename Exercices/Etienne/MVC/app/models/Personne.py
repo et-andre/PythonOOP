@@ -4,9 +4,10 @@ class Experience:
         self.nom  = nom
 
 class Personne:
-    def __init__(self, prenom, nom, fonction) -> None:
+    def __init__(self, prenom, nom, email, fonction) -> None:
         self.prenom      = prenom
         self.nom         = nom
+        self.email       = email
         self.fonction    = fonction
         self.experiences = []
         self.skills      = []
