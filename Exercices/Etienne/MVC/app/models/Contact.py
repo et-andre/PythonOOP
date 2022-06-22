@@ -7,4 +7,3 @@ class Contact:
 
     def __str__(self) -> str:
         return f"{self.nom} {self.prenom} {self.email} {self.fonction}"
-
